@@ -1,0 +1,26 @@
+{
+  "name": "linkr-components",
+  "description": "Web components for the linkr site",
+  "private": true,
+  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/clux/linkr-components.git"
+  },
+  "keywords": [
+    "polymer",
+    "component"
+  ],
+  "scripts": {
+    "build": "browserify -r tape --debug > bundle.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.0.4"
+  },
+  "bugs": {
+    "url": "http://github.com/clux/linkr-components/issues"
+  },
+  "license": "MIT"
+}
