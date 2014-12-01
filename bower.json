@@ -10,6 +10,7 @@
     "bundle.js"
   ],
   "dependencies": {
-    "polymer": "~0.0.20130808"
+    "webcomponentsjs": "~0.5.1",
+    "polymer": "~0.5.1"
   }
 }

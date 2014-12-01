@@ -13,9 +13,13 @@
     "component"
   ],
   "scripts": {
-    "build": "browserify -r tape --debug > bundle.js"
+    "build": "browserify -r tape --debug > bundle.js",
+    "test": "testling -x google-chrome"
   },
   "dependencies": {},
+  "testling": {
+    "html": "index.html"
+  },
   "devDependencies": {
     "tape": "~1.0.4"
   },
