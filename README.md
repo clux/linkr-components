@@ -1,7 +1,4 @@
 # Linkr-components
-[![browser support](https://ci.testling.com/clux/linkr-components.png)
-](https://ci.testling.com/clux/linkr-components)
-
 UI components for the linkr site relying on the [polymer library](http://www.polymer-project.org/).
 
 ## Installation
