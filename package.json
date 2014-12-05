@@ -19,7 +19,7 @@
   "dependencies": {},
   "testling": {
     "html": "index.html"
-      "ie/10..latest",
+      "ie/8..latest",
       "chrome/22..latest",
       "firefox/16..latest",
       "safari/latest",
