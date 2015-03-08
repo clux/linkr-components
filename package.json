@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "build": "browserify -r tape --debug > bundle.js",
-    "test": "testling -x google-chrome"
+    "check": "testling -x google-chrome",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "testling": {
     "html": "tests/linkr.test.html"
@@ -23,7 +24,14 @@
     "webcomponents.js": "^0.5.5-1"
   },
   "devDependencies": {
-    "tape": "^3.5.0"
+    "karma": "^0.12.31",
+    "karma-browserify": "^4.0.0",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-html-reporter": "^0.2.6",
+    "karma-tap": "^1.0.3",
+    "karma-tap-reporter": "0.0.3",
+    "tape": "^3.5.0",
+    "testling": "^1.7.1"
   },
   "bugs": {
     "url": "http://github.com/clux/linkr-components/issues"
