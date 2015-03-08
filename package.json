@@ -16,12 +16,14 @@
     "build": "browserify -r tape --debug > bundle.js",
     "test": "testling -x google-chrome"
   },
-  "dependencies": {},
   "testling": {
-    "html": "test.html"
+    "html": "tests/linkr.test.html"
+  },
+  "dependencies": {
+    "webcomponents.js": "^0.5.5-1"
   },
   "devDependencies": {
-    "tape": "~1.0.4"
+    "tape": "^3.5.0"
   },
   "bugs": {
     "url": "http://github.com/clux/linkr-components/issues"
