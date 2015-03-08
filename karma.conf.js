@@ -1,8 +1,8 @@
 // Karma configuration
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['polymer', 'browserify', 'tap'],
+    frameworks: ['browserify', 'polymer', 'tap'],
     files: [
       // need to watch for polymer.html, webcomponents.js and polymer deps
       {
