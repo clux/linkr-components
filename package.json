@@ -17,7 +17,7 @@
     "precheck": "npm run build",
     "check": "testling -x google-chrome",
     "karma": "./node_modules/karma/bin/karma start karma.conf.js",
-    "test": "testling -x phantomjs"
+    "test": "testling"
   },
   "testling": {
     "html": "tests/linkr.test.html"
