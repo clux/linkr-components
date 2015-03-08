@@ -31,7 +31,7 @@ test("link", function (t) {
     }
   ];
   document.body.appendChild(tag);
-  // can't test rendering yet as you can't query within the Shadow DOM
+
   setTimeout(function () {
     var el = document.querySelector('#testid');
     t.equal(typeof el.linksChanged, 'function', 'polymer extended it');

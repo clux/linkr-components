@@ -1,24 +1,35 @@
 // Karma configuration
-// Generated on Sun Mar 08 2015 13:53:21 GMT+0000 (GMT)
-
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['tap', 'browserify'],
+    frameworks: ['polymer', 'browserify', 'tap'],
     files: [
-      'tests/*.js'
+      // need to watch for polymer.html, webcomponents.js and polymer deps
+      {
+        pattern: 'bower_components/**',
+        // and serve them if requested in nested includes
+        included: false, served: true, watched: true
+      },
+
+      // include main test files
+      'tests/*.js',
     ],
+
+    // run browserify on test files before including them to get require
     preprocessors: {
       'tests/*.js': [ 'browserify' ]
     },
-    reporters: ['tap', 'html'],
-    htmlReporter: {
-      outputDir: 'output/karma',
-    },
-    tapReporter: {
-      outputFile: 'output/karma.tap'
+
+    // use the karma-polymer module to link import polymer + component
+    polymer: {
+      platform: 'bower_components/webcomponentsjs/webcomponents-lite.js',
+      src: [
+        'bower_components/polymer/polymer.html',
+        'linkr.html'
+      ]
     },
 
+    reporters: ['tap'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_DEBUG,
