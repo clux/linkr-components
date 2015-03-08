@@ -16,7 +16,8 @@
     "build": "browserify -r tape --debug > bundle.js",
     "precheck": "npm run build",
     "check": "testling -x google-chrome",
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "karma": "./node_modules/karma/bin/karma start karma.conf.js",
+    "test": "testling -x phantomjs"
   },
   "testling": {
     "html": "tests/linkr.test.html"
