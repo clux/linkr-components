@@ -9,9 +9,13 @@ Clone, install bower dependencies and bundle test dependencies:
 
 ```bash
 $ bower install
-$ npm run build
-$ npm test
+$ npm install
+# run one of
+$ npm run testling
+$ npm run karma
 ```
+
+Eventually, we may start running the karma tests on saucelabs.
 
 ## License
 MIT-Licensed. See LICENSE file for details.
