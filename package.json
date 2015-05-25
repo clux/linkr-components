@@ -13,8 +13,7 @@
     "component"
   ],
   "scripts": {
-    "build": "browserify -r tape --debug > bundle.js",
-    "pretestling": "npm run build",
+    "pretestling": "browserify -r tape --debug > bundle.js",
     "testling": "testling -x google-chrome",
     "karma": "./node_modules/karma/bin/karma start karma.conf.js",
     "test": "npm run karma"

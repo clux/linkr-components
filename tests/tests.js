@@ -34,7 +34,7 @@ test("link", function (t) {
 
   setTimeout(function () {
     var el = document.querySelector('#testid');
-    t.equal(typeof el.linksChanged, 'function', 'polymer extended it');
+    t.equal(el.is, 'linkr-list', 'polymer extended it');
     t.end();
   }, 200);
 });

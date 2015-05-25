@@ -32,7 +32,7 @@ module.exports = function (config) {
     reporters: ['tap'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_DEBUG,
+    logLevel: config.LOG_INFO, // config.LOG_DEBUG
     autoWatch: false,
     browsers: ['Chrome'],
     singleRun: true
