@@ -9,7 +9,7 @@
     h3 { padding: 4px; padding-bottom: 0px; }
     p { padding: 4px; }
   </style>
-  <template is="ul">
+  <template>
     <template is="dom-repeat" items="{{links}}">
       <li>
         <h3>
@@ -44,6 +44,7 @@
   };
   Polymer({
     is: 'linkr-list',
+    extends: "ul",
     properties: {
       links: {
         type: Array,

@@ -1,7 +1,7 @@
 var test = require('tape');
 
 test("link", function (t) {
-  var tag = document.createElement('linkr-list');
+  var tag = document.createElement('ul', 'linkr-list');
   t.ok(tag, "createElement worked");
   tag.id = "testid";
   tag.links = [
