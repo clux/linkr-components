@@ -15,7 +15,7 @@
   "scripts": {
     "pretestling": "browserify -r tape --debug > bundle.js",
     "testling": "testling -x google-chrome",
-    "karma": "./node_modules/karma/bin/karma start karma.conf.js",
+    "karma": "karma start karma.conf.js",
     "test": "npm run karma"
   },
   "testling": {
@@ -23,9 +23,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "karma": "^0.12.31",
-    "karma-browserify": "^4.0.0",
-    "karma-chrome-launcher": "^0.1.7",
+    "karma": "^0.12.35",
+    "karma-browserify": "^4.2.1",
+    "karma-chrome-launcher": "^0.1.12",
     "karma-polymer": "^0.1.4",
     "karma-tap": "^1.0.3",
     "karma-tap-reporter": "0.0.3",
