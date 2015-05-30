@@ -28,8 +28,8 @@
     "karma-chrome-launcher": "^0.1.12",
     "karma-polymer": "^0.1.4",
     "karma-tap": "^1.0.3",
-    "karma-tap-reporter": "0.0.3",
-    "tape": "^3.5.0",
+    "karma-tap-reporter": "0.0.4",
+    "tape": "^4.0.0",
     "testling": "^1.7.1"
   },
   "bugs": {
