@@ -25,7 +25,7 @@ module.exports = function (config) {
       platform: 'bower_components/webcomponentsjs/webcomponents-lite.js',
       src: [
         'bower_components/polymer/polymer.html',
-        'linkr.html'
+        'linkr-list.html'
       ]
     },
 

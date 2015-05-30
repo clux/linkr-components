@@ -1,0 +1,65 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module name="linkr-list" attributes="links">
+  <style>
+    :host { list-style: none; padding: 0px; margin: 0px;}
+    li:first-child { border-top: 1px solid; }
+    li { border: 1px solid; border-top: 0px; }
+    h3, p { margin: 0px; }
+    h3 { padding: 4px; padding-bottom: 0px; }
+    p { padding: 4px; }
+  </style>
+  <template>
+    <template is="dom-repeat" items="{{links}}">
+      <li>
+        <h3>
+          <a href="{{item.url}}">{{item.title}}</a>
+          <small>{{item.domain}}</small>
+        </h3>
+        <p>Posted <span>{{item.dateStr}}</span> in <a href="{{item.categoryUrl}}" title="View all in posts in this category">{{item.category}}</a></p>
+      </li>
+    </template>
+  </template>
+</dom-module>
+
+<script>
+  var getDomain = function (url) {
+    // everything between protocol:// and the next slash (if exists)
+    var reg = /^[\w]*\:\/\/([^\/]*)/;
+    var match = url.match(reg)[1] || '';
+    return (match.slice(0, 4) === 'www.') ? match.slice(4) : match;
+  };
+  var timeAgo = function (date) {
+    var unit = Math.floor((Date.now() - date)/1000);
+    var uNames = ['second', 'minute', 'hour', 'day', 'year'];
+    var uLens = [60, 60, 24, 365, Infinity];
+    for (var i = 0; i < uNames.length; i += 1) {
+      var div = uLens[i];
+      if (unit < div) {
+        var pl = (unit !== 1) ? 's' : '';
+        return unit + " " + uNames[i] + pl + ' ago';
+      }
+      unit = Math.floor(unit/div);
+    }
+  };
+  Polymer({
+    is: 'linkr-list',
+    extends: "ul",
+    properties: {
+      links: {
+        type: Array,
+        value: [],
+        observer: 'update'
+      }
+    },
+    update: function () {
+      this.links.forEach(function (link) {
+        var d = getDomain(link.url);
+        if (d) {
+          link.domain = '(' + d + ')';
+        }
+        link.dateStr = timeAgo(link.date);
+      });
+    }
+  });
+</script>
