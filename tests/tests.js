@@ -4,24 +4,21 @@ test("link", function (t) {
   var tag = document.createElement('ul', 'linkr-list');
   t.ok(tag, "createElement worked");
   tag.id = "testid";
-  tag.baseurl = 'c/';
+  tag.baseUrl = '/category/';
   tag.links = [
     {
-      id: '12323',
       url: "http://www.youtube.com/watch?v=LUFGCursSps&list=PL4E7AA9E142AAD126",
       title: "Scott Pilgrim Vs. The World The Game OST",
       date: new Date(),
       category: 'beautiful',
     },
     {
-      id: '34545',
       url: "https://github.com/clux/tournament",
       title: "tournament module page",
       date: new Date(),
       category: 'helpful'
     },
     {
-      id: '34125',
       url: "git://github.com/clux/interlude.git",
       title: "functional javascript library",
       date: new Date(),

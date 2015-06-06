@@ -24,10 +24,13 @@
 
 <script>
   var getDomain = function (url) {
-    // everything between protocol:// and the next slash (if exists)
+    // strip protocol:// and everything after domain (slash)
     var reg = /^[\w]*\:\/\/([^\/]*)/;
-    var match = url.match(reg)[1] || '';
-    return (match.slice(0, 4) === 'www.') ? match.slice(4) : match;
+    var stripped = url.match(reg)[1] || '';
+    // strip subdomains
+    var reg2 = /([\w]*\.[\w]*$)/;
+    var domainOnly = stripped.match(reg2)[1] || '';
+    return domainOnly;
   };
   var timeAgo = function (date) {
     var unit = Math.floor((Date.now() - date)/1000);
