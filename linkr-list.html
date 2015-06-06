@@ -50,14 +50,20 @@
         type: Array,
         value: [],
         observer: 'update'
+      },
+      baseUrl: {
+        type: String,
+        value: '/c/'
       }
     },
     update: function () {
+      var base = this.baseUrl;
       this.links.forEach(function (link) {
         var d = getDomain(link.url);
         if (d) {
           link.domain = '(' + d + ')';
         }
+        link.categoryUrl = base + link.category;
         link.dateStr = timeAgo(link.date);
       });
     }
